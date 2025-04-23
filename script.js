@@ -21,7 +21,7 @@ var artists = [
     }
   }
   
-  // FUN PAGE: Drag-and-drop logic
+  // drag and drop
   var dragged;
   
   function allowDrop(event) {

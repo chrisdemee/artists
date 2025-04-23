@@ -1,0 +1,101 @@
+/* Reset & Basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #292943);
+    color: #f1f1f1;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  
+  /* Paragraphs & Text */
+  p {
+    font-size: 1.1rem;
+    margin: 20px auto;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #ff4b2b;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+  }
+  
+  button:hover {
+    background-color: #ff3a1a;
+  }
+  
+  /* Navigation */
+  nav {
+    margin-top: 30px;
+  }
+  
+  nav a {
+    color: #9beeff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ffffff;
+  }
+  
+  /* Lists */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  }
+  
+  li {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+  }
+  
+  /* Drag-and-drop cursor */
+  li[draggable="true"] {
+    cursor: grab;
+  }
+  
+  /* Output Text */
+  #artist-output {
+    font-size: 1.2rem;
+    color: #ffd166;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  

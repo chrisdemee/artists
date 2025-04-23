@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎮 Rank My Artists!</h1>
+  <p>Drag to re-order your favorites:</p>
+
+  <ul id="rank-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <li draggable="true" ondragstart="drag(event)">Artist 1</li>
+    <li draggable="true" ondragstart="drag(event)">Artist 2</li>
+    <li draggable="true" ondragstart="drag(event)">Artist 3</li>
+    <li draggable="true" ondragstart="drag(event)">Artist 4</li>
+  </ul>
+
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Artist Gallery</a>
+  </nav>
+
+  <script src="script.js"></script>

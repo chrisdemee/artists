@@ -1,7 +1,7 @@
 // Shared artist list
 var artists = [
-    "Tyler, The Creator", "Radiohead", "Kendrick Lamar", "Lana Del Rey",
-    "Frank Ocean", "JID", "SZA", "Childish Gambino", "The Weeknd", "Denzel Curry"
+    "Tyler, The Creator", "Radiohead", "Kendrick Lamar", "Travis Scott",
+    "Frank Ocean", "JID", "Daniel Caesar", "Jpegmafia", "Deftones", "Denzel Curry"
   ];
   
   // HOME: Random artist generator

@@ -64,8 +64,13 @@ function showCard(index) {
   var cardImage = document.getElementById('card-image');
   var cardCaption = document.getElementById('card-caption');
   
-  cardImage.src = artistImages[index];
-  cardCaption.innerText = artistCaptions[index];
+  if (artistImages[index]) {
+    cardImage.src = artistImages[index];
+    cardCaption.innerText = artistCaptions[index];
+  } else {
+    cardImage.src = "images/default.jpg";
+    cardCaption.innerText = "Image not available";
+  }
   
   card.classList.add('active');
 }

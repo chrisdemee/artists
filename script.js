@@ -5,7 +5,7 @@ var artists = [
   ];
   //images and captions 
   var artistImages = [
-    "images/tyler.jpg",
+    "https://media.pitchfork.com/photos/676c2042452b9f87aafdf747/16:9/w_2880,h_1620,c_limit/Tyler-the-Creator.jpg",
     "images/billie.jpg",
     "images/kendrick.jpg",
     "images/lana.jpg",
@@ -39,23 +39,38 @@ var artists = [
   
   // GALLERY: List all artists
   function listArtists() {
-    var list = document.getElementById("artist-list");
+    var leftList = document.getElementById("artist-list-left");
+    var rightList = document.getElementById("artist-list-right");
+  
     for (var i = 0; i < artists.length; i++) {
       var item = document.createElement("li");
+      item.className = "list-group-item";
       item.innerText = artists[i];
-      
+  
+      // Add hover listeners
       (function(index) {
-        item.addEventListener('mouseover', function() {
+        item.addEventListener("mouseover", function () {
           showCard(index);
         });
-        item.addEventListener('mouseout', function() {
+        item.addEventListener("mouseout", function () {
           hideCard();
         });
+  
+        item.setAttribute("draggable", "true");
+        item.addEventListener("dragstart", drag);
+        item.addEventListener("dragover", allowDrop);
+        item.addEventListener("drop", drop);
       })(i);
-      
-      list.appendChild(item);
+  
+      // Distribute evenly: first 5 go left, rest go right
+      if (i < 5) {
+        leftList.appendChild(item);
+      } else {
+        rightList.appendChild(item);
+      }
     }
   }
+  
   
 
 // Show card on hover
@@ -95,6 +110,8 @@ function hideCard() {
   function drop(event) {
     event.preventDefault();
     var target = event.target;
+    //keeps the lsit behavior clean and keeps bugs away
+    // and makes sure item isnt being dropped on itself
     if (target.tagName === "LI" && dragged !== target) {
       var list = target.parentNode;
       list.insertBefore(dragged, target);

@@ -100,13 +100,36 @@
 
 
   #hover-card {
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%) translateY(30px); 
+    width: 200px; 
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transform: scale(0.95);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
   #hover-card.active {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(-50%) translateY(40px); 
+  }
+
+  #hover-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
   }
   
+  #artist-list-left li, #artist-list-right li {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    transition: background 0.3s ease;
+  }
+
+  #artist-list-left li:hover, #artist-list-right li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }

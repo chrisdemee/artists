@@ -3,6 +3,8 @@ var artists = [
     "Tyler, The Creator", "Radiohead", "Kendrick Lamar", "Travis Scott",
     "Frank Ocean", "Brockhampton", "Daniel Caesar", "Jpegmafia", "Deftones", "Denzel Curry"
   ];
+
+  
   //images and captions 
   var artistImages = [
     "https://media.pitchfork.com/photos/676c2042452b9f87aafdf747/16:9/w_2880,h_1620,c_limit/Tyler-the-Creator.jpg",
@@ -18,28 +20,28 @@ var artists = [
   ];
 
   var artistCaptions = [
-    "Odd Future king 🎩",
-    "Bad guy energy 🌪️",
-    "Pulitzer prize poet 📝",
-    "Queen of dreamy sadness 🌊",
-    "Mysterious R&B genius 🌈",
-    "Hot Pink vibes 💖",
-    "Ctrl over the soul 🎶",
-    "This is America 🇺🇸",
-    "Starboy forever 🌟",
-    "Riot legends ⚡"
+    "Top Album: Igor (2019)",
+    "Top Album: Ok Computer (1997)",
+    "Top Album: To Pimp A Butterfly (2015)",
+    "Top Album: Rodeo (2015)",
+    "Top Album: Blonde (2016)",
+    "Top Album: Saturation 2 (2017)",
+    "Top Album: Freudian (2017)",
+    "Top Album: LP; Offline! (2021)",
+    "Top Album: White Pony (2000)",
+    "Top Album: Taboo|Ta13oo (2018)"
   ];
   var lyrics = [
     `"I'm in love with the light, but I live in the dark" – Tyler, The Creator`,
     `"Immerse your soul in love" – Radiohead`,
     `"I remember syrup sandwiches and crime allowances" – Kendrick Lamar`,
-    `"Who put this thing together? Me, that's who!" – Travis Scott`,
-    `"I'm not brave, I'm just not afraid to die" – Frank Ocean`,
-    `"I crash cars, make art, and break hearts" – Brockhampton`,
-    `"We find love in the darkest places" – Daniel Caesar`,
-    `"You think you know me but you don't, Peggy" – Jpegmafia`,
-    `"God bless the ones that break your fall" – Deftones`,
-    `"Ultimate, infinite, flow is opium" – Denzel Curry`
+    `"Uh, watchin' Family Guy, no way to pause it (Alright)" – Travis Scott`,
+    `"Less morose and more present, dwell on my gifts for a second" – Frank Ocean`,
+    `"And we said forever, forever dont last to long" – Brockhampton`,
+    `"It's never over until life ends" – Daniel Caesar`,
+    `"I let it hit, brewin that coffee I'm takin' a sip" – Jpegmafia`,
+    `"You're shooting stars from the barrel of your eyes. It drives me crazy, just drives me wild" – Deftones`,
+    `"I am the one, don't weigh a ton, Don't need a gun to get respect up on the street" – Denzel Curry`
   ];
   
   function showLyric() {

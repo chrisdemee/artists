@@ -113,6 +113,7 @@ font-style: normal;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 400px;
   }
   
   #hover-card.active {
@@ -124,6 +125,9 @@ font-style: normal;
     max-width: 150px;
     height: auto;
     border-radius: 8px;
+    width: 100%; /* fills the card width */
+  height: auto;
+  border-radius: 10px;
   }
   
   #artist-list-left li, #artist-list-right li {
@@ -174,4 +178,28 @@ font-style: normal;
     font-family: "rig-solid-bold-inline-solo", sans-serif;
 font-weight: 700;
 font-style: normal;
+font-size: 24px;
   }
+
+
+.draggable-item {
+  padding: 12px;
+  margin: 8px;
+  background-color: #f8f9fa;  
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: grab;
+  transition: background-color 0.3s ease; 
+}
+
+
+.draggable-item:hover {
+  background-color: #007bff;
+  color: white;  
+}
+
+
+.draggable-item:active {
+  background-color: #0056b3;  
+  cursor: grabbing;
+}

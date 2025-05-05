@@ -3,7 +3,19 @@ var artists = [
     "Tyler, The Creator", "Radiohead", "Kendrick Lamar", "Travis Scott",
     "Frank Ocean", "Brockhampton", "Daniel Caesar", "Jpegmafia", "Deftones", "Denzel Curry"
   ];
-
+// links to the Spotify profiles of each artist
+  var artistLinks = [
+    "https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF", // Tyler The Creator
+    "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb", // Radiohead
+    "https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg", // Kendrick Lamar
+    "https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY", // Travis Scott
+    "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM", // Frank Ocean
+    "https://open.spotify.com/artist/1Bl6wpkWCQ4KVgnASpvzzA", // Brockhampton
+    "https://open.spotify.com/artist/20wkVLutqVOYrc0kxFs7rA", // Daniel Caesar
+    "https://open.spotify.com/artist/6yJ6QQ3Y5l0s0tn7b0arrO", // Jpegmafia
+    "https://open.spotify.com/artist/6Ghvu1VvMGScGpOUJBAHNH", // Deftones
+    "https://open.spotify.com/artist/6fxyWrfmjcbj5d12gXeiNV"  // Denzel Curry
+  ];
   
   //images and captions 
   var artistImages = [
@@ -18,7 +30,7 @@ var artists = [
     "https://preview.redd.it/share-some-of-your-favorite-pictures-of-deftones-performing-v0-g2bw0iqftd5c1.jpg?width=2000&format=pjpg&auto=webp&s=fb8578421118a9fb8ffe97d669d431871d0f9cee",
     "https://ca.billboard.com/media-library/denzel-curry-performs-at-the-bonnaroo-music-arts-festival-on-june-17-2022-in-manchester-tennessee.jpg?id=54697539&width=980"
   ];
-
+// captions associated with each artist's top album
   var artistCaptions = [
     "Top Album: Igor (2019)",
     "Top Album: Ok Computer (1997)",
@@ -31,6 +43,8 @@ var artists = [
     "Top Album: White Pony (2000)",
     "Top Album: Taboo|Ta13oo (2018)"
   ];
+
+// Lyrics for random selection
   var lyrics = [
     `"I'm in love with the light, but I live in the dark" – Tyler, The Creator`,
     `"Immerse your soul in love" – Radiohead`,
@@ -44,24 +58,30 @@ var artists = [
     `"I am the one, don't weigh a ton, Don't need a gun to get respect up on the street" – Denzel Curry`
   ];
   
+  // Function to show a random lyric when called
   function showLyric() {
     var randomIndex = Math.floor(Math.random() * lyrics.length);
     document.getElementById("lyric-output").innerText = lyrics[randomIndex];
   }
   
 
-  // HOME: Random artist generator
+  // home: Random artist generator
   function showArtist() {
+    // Randomly selects an artist from the list
     var randomIndex = Math.floor(Math.random() * artists.length);
     var artist = artists[randomIndex];
-    document.getElementById("artist-output").innerText = "You should listen to: " + artist;
+    var link = artistLinks[randomIndex];
+    // make link clickable
+    document.getElementById("artist-output").innerHTML = 
+    `You should listen to: <a href="${link}" target="_blank">${artist}</a>`;
   }
   
-  // GALLERY: List all artists
+  // gallery: List all artists
   function listArtists() {
+    //left and right sections 
     var leftList = document.getElementById("artist-list-left");
     var rightList = document.getElementById("artist-list-right");
-  
+    // makes a new list item for each artist
     for (var i = 0; i < artists.length; i++) {
       var item = document.createElement("li");
       item.className = "list-group-item";
@@ -76,13 +96,10 @@ var artists = [
           hideCard();
         });
   
-        item.setAttribute("draggable", "true");
-        item.addEventListener("dragstart", drag);
-        item.addEventListener("dragover", allowDrop);
-        item.addEventListener("drop", drop);
+      
       })(i);
   
-      // Distribute evenly: first 5 go left, rest go right
+      // first 5 go left, rest go right
       if (i < 5) {
         leftList.appendChild(item);
       } else {
@@ -98,7 +115,7 @@ function showCard(index) {
   var card = document.getElementById('hover-card');
   var cardImage = document.getElementById('card-image');
   var cardCaption = document.getElementById('card-caption');
-  
+    // Sets the card's image and caption based on the hovered artist
   if (artistImages[index]) {
     cardImage.src = artistImages[index];
     cardCaption.innerText = artistCaptions[index];
@@ -106,7 +123,7 @@ function showCard(index) {
     cardImage.src = "images/default.jpg";
     cardCaption.innerText = "Image not available";
   }
-  
+  // Makes the hover card visible
   card.classList.add('active');
 }
 
@@ -117,12 +134,13 @@ function hideCard() {
 }
 
   // drag and drop
+  // Variable to store the currently dragged item
   var dragged;
   
   function allowDrop(event) {
     event.preventDefault();
   }
-  
+  // Stores the dragged item
   function drag(event) {
     dragged = event.target;
   }
@@ -137,4 +155,5 @@ function hideCard() {
       list.insertBefore(dragged, target);
     }
   }
+  
   
